@@ -26,14 +26,13 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.125.0' # Fixed stable version
+          hugo-version: 'latest'
           extended: true
-      - name: Install Theme Dependencies
-        run: |
-          mkdir -p themes/
-          git clone --depth 1 https://github.com themes/blowfish
       - name: Build with Hugo
-        run: hugo --minify
+        run: |
+          mkdir -p themes/blowfish
+          git clone --depth=1 https://github.com themes/blowfish
+          hugo --minify --theme blowfish
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -49,3 +48,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
