@@ -1,8 +1,0 @@
-baseURL = 'https://allhemp.info'
-languageCode = 'en-us'
-title = 'AllHemp.info'
-theme = 'blowfish'
-
-[params]
-  colorScheme = "emerald" 
-  layoutPageView = "card"
